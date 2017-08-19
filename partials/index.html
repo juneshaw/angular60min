@@ -1,1 +1,8 @@
-<input type="text" data-ng-model="name" /> {{ name }}
+<div class="container">
+  <input ng-model="name" /> {{name}}
+  <ul data-ng-init="names=['June', 'Jeff', 'Livvy', 'Gina', 'Sonny', 'Kip']" >
+    <li ng-repeat="personName in names">
+      {{personName}}
+    </li>
+  </ul>
+</div>
