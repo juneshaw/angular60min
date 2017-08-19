@@ -1,8 +1,8 @@
 <div class="container">
   <input ng-model="name" /> {{name}}
-  <ul data-ng-init="names=['June', 'Jeff', 'Livvy', 'Gina', 'Sonny', 'Kip']" >
-    <li ng-repeat="personName in names">
-      {{personName}}
+  <ul data-ng-init="customers=[{name:'June',city:'ZFort Collins'}, {name:'Jeff',city:'State College'}]" >
+    <li ng-repeat="cust in customers | filter:name | orderBy:'city'">
+      {{cust.name | uppercase}} - {{cust.city | lowercase}}
     </li>
   </ul>
 </div>
