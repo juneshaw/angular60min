@@ -1,9 +1,17 @@
-app.controller('MainController', ['$scope', function($scope){
+app.controller('MainController', ['$scope', 'simpleFactory',
+ function($scope, simpleFactory){
   $scope.test='HTML and Routes Working'
-  $scope.customers=[{name:'June',city:'ZFort Collins'}, {name:'Jeff',city:'State College'}]
+  $scope.customers=[];
+
+  init();
+
+  function init() {
+    console.log('in the init of controller');
+    $scope.customers = simpleFactory.getCustomers();
+  }
 
   $scope.addCustomer = function () {
-    console.log('adding customer') 
+    console.log('adding customer')
     $scope.customers.push(
       {name: $scope.newCustomer.name,
       city: $scope.newCustomer.city}
